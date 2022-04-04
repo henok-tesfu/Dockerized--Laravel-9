@@ -1,0 +1,15 @@
+<-----
+ for production make ssl certificate and configer nginx conf for production
+
+CMD : mkcert filename
+
+run docker up
+
+CMD : docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build nginx
+
+<----
+to access the files on the docker container
+
+sudo docker exec containerID action 
+
+<--create mysql empty folder for the volume
