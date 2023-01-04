@@ -4,5 +4,16 @@ service:
   - docker
 
 script:
-  - docker build -t laravel-docker .
+  - docker build -t ${USER_NAME}/laravel-docker .
   # while using travis dont do any process start server
+  - docker images ${USER_NAME}/laravel-docker
+
+before_deploy:
+  - docker login -u ${USER_NAME} -p ${GIT_PASSWORD}
+  - docker images ${USER_NAME}/laravel-docker ${USER_NAME}/laravel-docker
+
+deploy:
+  provider: script
+  script: docker push ${USER_NAME}/laravel-docker
+  on:
+   branch: master

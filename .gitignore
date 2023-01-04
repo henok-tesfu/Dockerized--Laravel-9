@@ -1,3 +1,5 @@
 /mysql/*
 nginx/laravel-docker.test-key.pem
 nginx/laravel-docker.test.pem
+config_variables.yml
+.env
