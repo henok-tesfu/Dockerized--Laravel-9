@@ -1,0 +1,8 @@
+sudo: required
+
+service:
+  - docker
+
+script:
+  - docker build -t laravel-docker .
+  # while using travis dont do any process start server
